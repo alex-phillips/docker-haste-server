@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv bash
+
+mkdir -p /{config,data}
+
+if [ ! -f "/config/config.js" ]; then
+    mv /defaults/config.js /config/config.js
+fi
+
+rm /app/haste-server/config.js
+ln -s /config/config.js /app/haste-server/config.js
+
+# permissions
+chown -R abc:abc \
+	/app/haste-server \
+	/config \
+    /data
