@@ -9,7 +9,8 @@ LABEL maintainer="alex-phillips"
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache \
-	nodejs && \
+	nodejs \
+	yarn && \
  apk add --no-cache --virtual=build-dependencies \
  	git && \
  echo "**** install haste-server ****" && \
