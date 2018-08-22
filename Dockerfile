@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.7
+FROM lsiobase/alpine:3.8
 
 # set version label
 ARG BUILD_DATE
@@ -12,7 +12,8 @@ RUN \
 	nodejs \
 	yarn && \
  apk add --no-cache --virtual=build-dependencies \
- 	git && \
+ 	git \
+	npm && \
  echo "**** install haste-server ****" && \
  git clone https://github.com/seejohnrun/haste-server.git /app/haste-server && \
  cd /app/haste-server && \
