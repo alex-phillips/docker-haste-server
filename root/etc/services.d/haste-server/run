@@ -2,5 +2,7 @@
 
 cd /app/haste-server || exit
 
+/usr/bin/yarn env
+
 exec \
 	s6-setuidgid abc /usr/bin/npm start
