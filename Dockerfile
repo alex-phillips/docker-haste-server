@@ -10,10 +10,10 @@ RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache \
 	nodejs \
+	npm \
 	yarn && \
  apk add --no-cache --virtual=build-dependencies \
- 	git \
-	npm && \
+ 	git && \
  echo "**** install haste-server ****" && \
  git clone https://github.com/seejohnrun/haste-server.git /app/haste-server && \
  cd /app/haste-server && \
